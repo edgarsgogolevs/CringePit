@@ -7,7 +7,7 @@ The Greatest Cringe Software for everyone, who dabbles in cringe.
 ## Roadmap
 
 1. Create a list of things the Software will do!
-2. Create a ERD Diagram for the database and choice DBMS?
+2. Create a ERD Diagram for the database and choose DBMS?
 3. Choose Frontend framework
    - Great choices:
       - Vue.js;
