@@ -30,7 +30,7 @@ The Greatest Cringe Software for everyone, who dabbles in cringe.
 7. Closed Beta
 8. Public release
 9. Company goes public
-10. Cringe Software becomes the de-facto program for everything
+10. Cringe Software becomes the de facto program for everything
 11. Cringe MetaVerse is announced
 12. Lobbying
 13. Total Universe domination
