@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+
+  backend:
+    build: ./services/backend
+    ports:
+      - 5000:5000
+    environment:
+      - DATABASE_URL=postgres://CringePIT:privet_eta_CringePIT@db:5432/CringePIT_enteprise
+      - SECRET_KEY=09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7
+    volumes:
+      - ./services/backend:/app
+    command: uvicorn src.main:app --reload --host 0.0.0.0 --port 5000
+    
+  frontend:
+    build: ./services/frontend
+    volumes:
+      - './services/frontend:/app'
+      - '/app/node_modules'
+    ports:
+      - 8080:8080
+      
+  db:
+    image: postgres:15.1
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_USER=CringePIT
+      - POSTGRES_PASSWORD=privet_eta_CringePIT
+      - POSTGRES_DB=CringePIT_enteprise
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+volumes:
+  postgres_data:
