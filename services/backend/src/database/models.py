@@ -11,16 +11,20 @@ class Users(models.Model):
     created_at = fields.DatetimeField(auto_now_add=True)
     modified_at = fields.DatetimeField(auto_now=True)
 
+class ReviewType(models.Model):
+    id = fields.IntField(pk=True)
+    title = fields.CharField(max_length=30, unique=True)
+
 class Reviews(models.Model):
     id = fields.IntField(pk=True)
     title = fields.CharField(max_length=225)
     content = fields.TextField()
-    type = fields.CharField(max_length=30, null=True)
     created_at = fields.DatetimeField(auto_now_add=True)
     modified_at = fields.DatetimeField(auto_now=True)
 
     
     # foreign keys
+    type = fields.ForeignKeyField("models.ReviewType")
     author = fields.ForeignKeyField("models.Users", related_name="reviews")
 
     def __str__(self):

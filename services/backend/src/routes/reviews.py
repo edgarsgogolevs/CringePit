@@ -20,7 +20,7 @@ router = APIRouter()
     dependencies=[Depends(get_current_user)],
 )
 async def get_reviews():
-    return await crud.get_review()
+    return await crud.get_reviews()
 
 
 @router.get(
