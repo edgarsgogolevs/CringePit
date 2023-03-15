@@ -47,3 +47,14 @@ The Greatest Cringe Software for everyone, who dabbles in cringe.
 - [userinyerface](https://userinyerface.com)
 
 ![](https://i.imgur.com/waxVImv.png)
+
+## Commands 
+
+- To start docker use command:
+
+docker-compose up -d --build
+- Now, when you make changes to the models, you can run the following commands to update the database:
+
+docker-compose exec backend aerich migrate
+
+docker-compose exec backend aerich upgrade
