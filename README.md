@@ -53,6 +53,11 @@ The Greatest Cringe Software for everyone, who dabbles in cringe.
 - To start docker use command:
 
 docker-compose up -d --build
+
+- init db 
+
+docker-compose exec backend aerich init-db
+
 - Now, when you make changes to the models, you can run the following commands to update the database:
 
 docker-compose exec backend aerich migrate
