@@ -26,10 +26,7 @@ class Reviews(models.Model):
     # foreign keys
     type = fields.ForeignKeyField("models.ReviewType")
     author = fields.ForeignKeyField("models.Users", related_name="reviews")
-
-    def __str__(self):
-        return f"{self.title}, {self.author_id} on {self.created_at}"
-    
+       
 class Movies(models.Model):
     id = fields.IntField(pk=True)
     title = fields.CharField(max_length=225)

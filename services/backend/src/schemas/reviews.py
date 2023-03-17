@@ -18,4 +18,4 @@ ReviewOutSchema = pydantic_model_creator(
 class UpdateReview(BaseModel):
     title: Optional[str]
     content: Optional[str]
-    type: Optional[str]
+    type: Optional[int]

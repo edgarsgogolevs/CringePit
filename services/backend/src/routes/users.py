@@ -26,7 +26,6 @@ router = APIRouter()
 async def create_user(user: UserInSchema) -> UserOutSchema:
     return await crud.create_user(user)
 
-
 @router.post("/login")
 async def login(user: OAuth2PasswordRequestForm = Depends()):
     user = await validate_user(user)
