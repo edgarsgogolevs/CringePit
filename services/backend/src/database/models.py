@@ -4,10 +4,10 @@ from tortoise import fields, models
 class Users(models.Model):
     id = fields.IntField(pk=True)
     username = fields.CharField(max_length=20, unique=True)
-    password = fields.CharField(max_length=128, null=True)
+    password = fields.CharField(max_length=128)
     points = fields.IntField(default=0)
-    yellow_cards = fields.IntField(default=0, null=True)
-    red_cards = fields.IntField(default=0, null=True)
+    yellow_cards = fields.IntField(default=0)
+    red_cards = fields.IntField(default=0)
     created_at = fields.DatetimeField(auto_now_add=True)
     modified_at = fields.DatetimeField(auto_now=True)
 
@@ -19,12 +19,13 @@ class Reviews(models.Model):
     id = fields.IntField(pk=True)
     title = fields.CharField(max_length=225)
     content = fields.TextField()
+    score = fields.IntField(null=True)
     created_at = fields.DatetimeField(auto_now_add=True)
     modified_at = fields.DatetimeField(auto_now=True)
 
     
     # foreign keys
-    type = fields.ForeignKeyField("models.ReviewType")
+    type = fields.ForeignKeyField("models.ReviewType", related_name="reviews")
     author = fields.ForeignKeyField("models.Users", related_name="reviews")
        
 class Movies(models.Model):

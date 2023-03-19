@@ -14,7 +14,7 @@ import 'from src.routes import users, notes' must be after 'Tortoise.init_models
 why?
 https://stackoverflow.com/questions/65531387/tortoise-orm-for-python-no-returns-relations-of-entities-pyndantic-fastapi
 """
-from src.routes import users, reviews
+from src.routes import users, reviews, reviewsType
 
 
 
@@ -32,6 +32,7 @@ app.add_middleware(
 
 app.include_router(users.router)
 app.include_router(reviews.router)
+app.include_router(reviewsType.router)
 
 
 # database ORM link

@@ -10,7 +10,7 @@ ReviewInSchema = pydantic_model_creator(
     Reviews, name="ReviewIn", exclude=["author_id"], exclude_readonly=True)
 ReviewOutSchema = pydantic_model_creator(
     Reviews, name="Review", exclude =[
-      "modified_at", "author.password", "author.created_at", "author.modified_at"
+      "modified_at", "author.password", "author.created_at", "author.modified_at", "author.movieReviews"
     ]
 )
 

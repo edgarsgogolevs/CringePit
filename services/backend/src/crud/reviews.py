@@ -45,5 +45,5 @@ async def delete_review(review_id, current_user) -> Status:
         deleted_count = await Reviews.filter(id=review_id).delete()
         if not deleted_count:
             raise HTTPException(status_code=404, detail=f"Review {review_id} not found")
-        return Status(message=f"Deleted Review {review_id}")  # UPDATED
+        return Status(message=f"Deleted Review {review_id}")
     raise HTTPException(status_code=403, detail=f"Not authorized to delete")

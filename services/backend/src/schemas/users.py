@@ -4,7 +4,7 @@ from src.database.models import Users
 
 
 UserInSchema = pydantic_model_creator(
-    Users, name="UserIn", exclude_readonly=True
+    Users, name="UserIn", exclude=["movieReviews","created_at","modified_at", "reviews", "points", "yellow_cards", "red_cards", "id"]
 )
 UserOutSchema = pydantic_model_creator(
     Users, name="UserOut", exclude=["password", "created_at", "modified_at"]

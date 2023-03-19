@@ -34,7 +34,7 @@ async def get_review(review_id: int) -> ReviewOutSchema:
     except DoesNotExist:
         raise HTTPException(
             status_code=404,
-            detail="Note does not exist",
+            detail="Review does not exist",
         )
 
 
@@ -42,7 +42,8 @@ async def get_review(review_id: int) -> ReviewOutSchema:
     "/reviews", response_model=ReviewOutSchema, dependencies=[Depends(get_current_user)]
 )
 async def create_review(
-    review: ReviewInSchema, current_user: UserOutSchema = Depends(get_current_user)
+    review: ReviewInSchema,
+    current_user: UserOutSchema = Depends(get_current_user)
 ) -> ReviewOutSchema:
     return await crud.create_review(review, current_user)
 
